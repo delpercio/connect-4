@@ -1,4 +1,4 @@
-PAGES:
+PAGES: https://percio.gitlab.io/connect-four 
 
 
 Dev Team: Senyce White, Chris Stranger, Steven Delpercio
