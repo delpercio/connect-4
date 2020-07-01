@@ -73,24 +73,24 @@ function colorCompare(one, two, three, four) {
     return (one === two && one === three && one === four && one !== 'white')  //This goes into our win conditions, so each number will represent a cell, we compare them to seeif the are === and NOT white.
 }
 function horizontalCheck() { //Scans every row, checks each col then adds +1 to col value and checks that one repeat 
-    for (let row = 0; row < tbRow.length; row++) {
-        for (let col = 0; col < 4; col++) { //there are only 4 possible ways to winhorizontally so it only needs to loop 4 times
-            if (colorCompare(tbRow[row].children[col].style.backgroundColor,
-                tbRow[row].children[col + 1].style.backgroundColor,
-                tbRow[row].children[col + 2].style.backgroundColor,
-                tbRow[row].children[col + 3].style.backgroundColor)) {
+    for (let rowNum = 0; rowNum < tbRow.length; rowNum++) {
+        for (let colNum = 0; colNum < 4; colNum++) { //there are only 4 possible ways to winhorizontally so it only needs to loop 4 times
+            if (colorCompare(tbRow[rowNum].children[colNum].style.backgroundColor,
+                tbRow[rowNum].children[colNum + 1].style.backgroundColor,
+                tbRow[rowNum].children[colNum + 2].style.backgroundColor,
+                tbRow[rowNum].children[colNum + 3].style.backgroundColor)) {
                 return true;
             }
         }
     }
 }
 function verticalCheck() { //works the same way as horizontal but changes the row +1 to check each row
-    for (let col = 0; col < 7; col++) {
-        for (let row = 0; row < 3; row++) {   //there are only 3 possible ways to win vertically so it only needs to loop 3 times
-            if (colorCompare(tbRow[row].children[col].style.backgroundColor,
-                tbRow[row + 1].children[col].style.backgroundColor,
-                tbRow[row + 2].children[col].style.backgroundColor,
-                tbRow[row + 3].children[col].style.backgroundColor)) {
+    for (let colNum = 0; colNum < 7; colNum++) {
+        for (let rowNum = 0; rowNum < 3; rowNum++) {   //there are only 3 possible ways to win vertically so it only needs to loop 3 times
+            if (colorCompare(tbRow[rowNum].children[colNum].style.backgroundColor,
+                tbRow[rowNum + 1].children[colNum].style.backgroundColor,
+                tbRow[rowNum + 2].children[colNum].style.backgroundColor,
+                tbRow[rowNum + 3].children[colNum].style.backgroundColor)) {
                 return true
             }
         }
@@ -98,12 +98,12 @@ function verticalCheck() { //works the same way as horizontal but changes the ro
 
 }
 function diagCheckIncrease() { //works just like horizontal, except every time it goes to check a col it increases or decreased (general comment for both diag)
-    for (let col = 0; col < 4; col++) {
-        for (let row = 0; row < 3; row++) {
-            if (colorCompare(tbRow[row].children[col].style.backgroundColor,
-                tbRow[row + 1].children[col + 1].style.backgroundColor,
-                tbRow[row + 2].children[col + 2].style.backgroundColor,
-                tbRow[row + 3].children[col + 3].style.backgroundColor)) {
+    for (let colNum = 0; colNum < 4; colNum++) {
+        for (let rowNum = 0; rowNum < 3; rowNum++) {
+            if (colorCompare(tbRow[rowNum].children[colNum].style.backgroundColor,
+                tbRow[rowNum + 1].children[colNum + 1].style.backgroundColor,
+                tbRow[rowNum + 2].children[colNum + 2].style.backgroundColor,
+                tbRow[rowNum + 3].children[colNum + 3].style.backgroundColor)) {
                 return true
             }
         }
@@ -111,12 +111,12 @@ function diagCheckIncrease() { //works just like horizontal, except every time i
 
 }
 function diagCheckDecrease() { //works just like horizontal, except every time it goes to check a col it increases or decreased (general comment for both diag)
-    for (let col = 0; col < 4; col++) {
-        for (let row = 5; row > 2; row--) {
-            if (colorCompare(tbRow[row].children[col].style.backgroundColor,
-                tbRow[row - 1].children[col + 1].style.backgroundColor,
-                tbRow[row - 2].children[col + 2].style.backgroundColor,
-                tbRow[row - 3].children[col + 3].style.backgroundColor)) {
+    for (let colNum = 0; colNum < 4; colNum++) {
+        for (let rowNum = 5; rowNum > 2; rowNum--) {
+            if (colorCompare(tbRow[rowNum].children[colNum].style.backgroundColor,
+                tbRow[rowNum - 1].children[colNum + 1].style.backgroundColor,
+                tbRow[rowNum - 2].children[colNum + 2].style.backgroundColor,
+                tbRow[rowNum - 3].children[colNum + 3].style.backgroundColor)) {
                 return true
             }
         }
