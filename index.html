@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect 4</title>
-    <link rel="stylesheet"  href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-         <h1>Connect 4</h1>
+        <h1>Connect 4</h1>
     </header>
-   
+
     <h2 class="player-turn"></h2>
-    <div id="announce-winner"></div>
-    <div class="game">
-    
-        <table>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
-            <tr>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-                <td class="slot"></td>
-
-            </tr>
+    <div id="container">
 
 
-        </table>
+        <div id="announce-winner"></div>
+        <div class="game">
 
-    
+            <table>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+                <tr>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+                    <td class="slot"></td>
+
+                </tr>
+
+
+            </table>
+        </div>
 
     </div>
+    <div id="button-container"> <button id="myButton" onclick="window.location.reload()" class="reset">Restart!</button>
+    </div>
 
-   
-    <button id="myButton" onclick="window.location.reload()" class="reset">Restart!</button>
-
-
-  <script src="src/script.js"></script>  
+    <script src="src/script.js"></script>
 </body>
+
 </html>

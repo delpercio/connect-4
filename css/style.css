@@ -15,6 +15,7 @@ h1{
 h2{
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 10px;
     color: wheat;
     font-size: 35px;
 
@@ -22,27 +23,16 @@ h2{
 body{
     background-color: rgb(24, 59, 80)
 }
-.reset{
-    position: absolute;
-    top: 90%;
-    left:50%;
-    transform: translate(-50%);
-    border:1px solid black;
-    width: 6rem;
-    text-align: center;
-    cursor: pointer;
-}
 
 .game{
-    position: absolute;
-    top:20%;
-    left:50%;
-    transform: translate(-50%);
+
     width: 650px;
     height: 600px;
     background: rgb(0, 0, 0);
     border: 1px solid black;
     padding: 1.5rem;
+    display: flex;
+    position: relative;
    
 }
 
@@ -53,15 +43,6 @@ body{
     border:1px solid black;
     border-radius: 50%;
 
-}
-
-#announce-winner{
-    z-index: 10;
-    color: red;
-    text-align: center;
-    font-size: 45px;
-    background-color: rgba(0, 0, 0, 0.096);
-    
 }
 
 #myButton {
@@ -78,13 +59,28 @@ body{
 	padding:6px 24px;
 	text-decoration:none;
     text-shadow:0px 1px 0px #854629;
-    position: relative;
-    top: 615px;
+    text-align: center;
 }
+  
+   
+
+
 #myButton:hover {
 	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
 	background-color:#bc3315;
 }
 
+#container{
+    display: flex;
+    justify-content: center;
+  
+    
+}
+
+#button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 
