@@ -43,7 +43,7 @@ function changeTurn(e) { //this function turns each row into an array, and then 
 
                     }
                     else {
-                        playerTurn.innerHTML = `Hey! ${player2} it's your move!`
+                        playerTurn.innerHTML = `${player2} <br> it's your move!`
                         return currentPlayer = 2
                     }
                 } else {
@@ -58,7 +58,7 @@ function changeTurn(e) { //this function turns each row into an array, and then 
 
                     }
                     else {
-                        playerTurn.innerHTML = `Hey! ${player1} it's your move!`
+                        playerTurn.innerHTML = `${player1} <br> it's your move!`
                         return currentPlayer = 1;
                     }
                 }
