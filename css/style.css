@@ -1,3 +1,6 @@
+/*Created beginning flex box, 
+but cant seem to get the grid to show the rows*/
+
 :root {
     box-sizing: border-box;
     margin: 0;
@@ -22,6 +25,4 @@
 
 .disc-red {
     color: red;
-
-    
 }
