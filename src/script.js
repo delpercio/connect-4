@@ -26,11 +26,11 @@ function changeTurn(e) { //this function turns each row into an array, and then 
     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) { //if you havent won, continue
         return
     } else {
-        for (let i = 5; i >= 0; i--) {
-            if (tbRow[i].children[column].style.backgroundColor === 'white') {
-                row.push(tbRow[i].children[column]) //this pushes this cell into our array
+        for (let i = 5; i >= 0; i--) { //This is gonna loop through every row
+            if (tbRow[i].children[column].style.backgroundColor === 'white') { //if there is an empty cell in that row....
+                row.push(tbRow[i].children[column]) //this pushes that empty cell into our array
                 if (currentPlayer === 1) {
-                    row[0].style.backgroundColor = player1Color //this pulls the text color, which is a string! from player 1 color and applies it to the first index of the array
+                    row[0].style.backgroundColor = player1Color //this pulls the text color, which is a string! from player 1 color and applies it to row[0]
                     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) { //for a winner
                         playerTurn.innerHTML = `${player1} IS THE WINNER! <br> press restart for a rematch`
                         // winnerDiv.innerHTML = `${player1} IS THE WINNER!`
@@ -47,7 +47,7 @@ function changeTurn(e) { //this function turns each row into an array, and then 
                         return currentPlayer = 2
                     }
                 } else {
-                    row[0].style.backgroundColor = player2Color //this pulls the text color, which is a string! from player 2 color.
+                    row[0].style.backgroundColor = player2Color //this pulls the text color, which is a string! from player 2 color. and makes row[0] that color
                     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) {//for a winner
                         playerTurn.innerHTML = `${player2} IS THE WINNER! <br> press restart for a rematch`
 
