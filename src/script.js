@@ -6,8 +6,8 @@ const playerTurn = document.querySelector('.player-turn'); //this is just the h2
 let winnerDiv = document.getElementById("announce-winner")
 let player1 = 'RED'; //declare player 1
 let player1Color = 'red';
-let player2 = 'YELLOW'; //declare player 2
-let player2Color = 'yellow';
+let player2 = 'BLACK'; //declare player 2
+let player2Color = 'black';
 let currentPlayer = 1; //gonna need this to switch between two players
 playerTurn.innerHTML = `${player1} <br> you go first!` //This displays whos turn it is in the h2 and gives the info for who starts
 
@@ -26,9 +26,11 @@ function changeTurn(e) { //this function turns each row into an array, and then 
     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) { //if you havent won, continue
         return
     } else {
+        
         for (let i = 5; i >= 0; i--) { //This is gonna loop through every row
             if (tbRow[i].children[column].style.backgroundColor === 'white') { //if there is an empty cell in that row....
                 row.push(tbRow[i].children[column]) //this pushes that empty cell into our array
+                console.log(row[0])
                 if (currentPlayer === 1) {
                     row[0].style.backgroundColor = player1Color //this pulls the text color, which is a string! from player 1 color and applies it to row[0]
                     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) { //for a winner
