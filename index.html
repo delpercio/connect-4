@@ -11,83 +11,103 @@
 <body>
     <header>
         <h1>Connect 4</h1>
+        <p class="tagline">by Hasbro</p>
     </header>
 
-    <h2 class="player-turn"></h2>
-    <div id="container">
-
-
-        <div id="announce-winner"></div>
-        <div class="game">
-
-            <table>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-                <tr>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-                    <td class="slot"></td>
-
-                </tr>
-
-
-            </table>
+    <div id="setup-panel">
+        <div class="setup-row">
+            <label>Game Mode:</label>
+            <div class="btn-group">
+                <button class="mode-btn active" data-mode="2player">2 Players</button>
+                <button class="mode-btn" data-mode="computer">vs Computer</button>
+            </div>
         </div>
-
+        <div class="setup-row" id="difficulty-row" style="display:none;">
+            <label>Difficulty:</label>
+            <div class="btn-group">
+                <button class="diff-btn active" data-diff="easy">Easy</button>
+                <button class="diff-btn" data-diff="medium">Medium</button>
+                <button class="diff-btn" data-diff="hard">Hard</button>
+            </div>
+        </div>
     </div>
-    <div id="button-container"> <button id="myButton" onclick="window.location.reload()" class="reset">Restart!</button>
+
+    <h2 class="player-turn"></h2>
+
+    <div id="container">
+        <div class="board-wrapper">
+            <div id="col-arrows">
+                <div class="col-arrow" data-col="0">&#9660;</div>
+                <div class="col-arrow" data-col="1">&#9660;</div>
+                <div class="col-arrow" data-col="2">&#9660;</div>
+                <div class="col-arrow" data-col="3">&#9660;</div>
+                <div class="col-arrow" data-col="4">&#9660;</div>
+                <div class="col-arrow" data-col="5">&#9660;</div>
+                <div class="col-arrow" data-col="6">&#9660;</div>
+            </div>
+            <div class="game">
+                <table id="game-table">
+                    <tr>
+                        <td class="slot" data-row="0" data-col="0"></td>
+                        <td class="slot" data-row="0" data-col="1"></td>
+                        <td class="slot" data-row="0" data-col="2"></td>
+                        <td class="slot" data-row="0" data-col="3"></td>
+                        <td class="slot" data-row="0" data-col="4"></td>
+                        <td class="slot" data-row="0" data-col="5"></td>
+                        <td class="slot" data-row="0" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="slot" data-row="1" data-col="0"></td>
+                        <td class="slot" data-row="1" data-col="1"></td>
+                        <td class="slot" data-row="1" data-col="2"></td>
+                        <td class="slot" data-row="1" data-col="3"></td>
+                        <td class="slot" data-row="1" data-col="4"></td>
+                        <td class="slot" data-row="1" data-col="5"></td>
+                        <td class="slot" data-row="1" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="slot" data-row="2" data-col="0"></td>
+                        <td class="slot" data-row="2" data-col="1"></td>
+                        <td class="slot" data-row="2" data-col="2"></td>
+                        <td class="slot" data-row="2" data-col="3"></td>
+                        <td class="slot" data-row="2" data-col="4"></td>
+                        <td class="slot" data-row="2" data-col="5"></td>
+                        <td class="slot" data-row="2" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="slot" data-row="3" data-col="0"></td>
+                        <td class="slot" data-row="3" data-col="1"></td>
+                        <td class="slot" data-row="3" data-col="2"></td>
+                        <td class="slot" data-row="3" data-col="3"></td>
+                        <td class="slot" data-row="3" data-col="4"></td>
+                        <td class="slot" data-row="3" data-col="5"></td>
+                        <td class="slot" data-row="3" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="slot" data-row="4" data-col="0"></td>
+                        <td class="slot" data-row="4" data-col="1"></td>
+                        <td class="slot" data-row="4" data-col="2"></td>
+                        <td class="slot" data-row="4" data-col="3"></td>
+                        <td class="slot" data-row="4" data-col="4"></td>
+                        <td class="slot" data-row="4" data-col="5"></td>
+                        <td class="slot" data-row="4" data-col="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="slot" data-row="5" data-col="0"></td>
+                        <td class="slot" data-row="5" data-col="1"></td>
+                        <td class="slot" data-row="5" data-col="2"></td>
+                        <td class="slot" data-row="5" data-col="3"></td>
+                        <td class="slot" data-row="5" data-col="4"></td>
+                        <td class="slot" data-row="5" data-col="5"></td>
+                        <td class="slot" data-row="5" data-col="6"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="button-container">
+        <button id="myButton" onclick="resetGame()">Restart!</button>
     </div>
 
     <script src="src/script.js"></script>
