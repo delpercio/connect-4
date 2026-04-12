@@ -240,8 +240,10 @@ function chooseComputerCol() {
         return centerOrder.find(c => validCols.includes(c)) ?? randomChoice(validCols);
     }
 
-    // Hard: minimax with alpha-beta (depth 7)
-    const result = minimax(board, 7, -Infinity, Infinity, true);
+    // Hard: minimax with alpha-beta, depth scales with game progress
+    const emptyCells = board.flat().filter(v => v === EMPTY).length;
+    const depth = emptyCells <= 12 ? 9 : emptyCells <= 24 ? 7 : 5;
+    const result = minimax(board, depth, -Infinity, Infinity, true);
     return result.col ?? randomChoice(validCols);
 }
 
@@ -370,49 +372,5 @@ function resetGame() {
 }
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
+document.getElementById('myButton').addEventListener('click', resetGame);
 resetGame();
-
-
-
-
-
-
-
-
-
-
-
-
-
-//these dont work like I want them too, but they are here when Its time to refactor
-
-
-// function player1WinCheck() {
-//     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) {
-//         playerTurn.innerHTML = `${player1} IS THE WINNER!`
-//     }
-//     else if (tieCheck()) {
-//         playerTurn.innerHTML = 'ITS A STALEMATE!'
-
-//     }
-
-// }
-
-// function player2WinCheck() {
-//     if (horizontalCheck() || verticalCheck() || diagCheckDecrease() || diagCheckIncrease()) {
-//         playerTurn.innerHTML = `${player2} IS THE WINNER!`
-//     }
-//     else if (tieCheck()) {
-//         playerTurn.innerHTML = 'ITS A STALEMATE!'
-
-//     }
-
-// }
-
-
-// for (let i = 0; i < tbData.length; i++) { //this loop just checks my work to make sure all clicks are indexed
-//     tbData[i].addEventListener('click', function addListenerToEveryElement(e) {
-//         console.log(`${e.target.parentElement.rowIndex}, ${e.target.cellIndex}`) //rowIndex and cellIndex are table properties
-
-//     })
-// }
